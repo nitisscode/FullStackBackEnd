@@ -1,9 +1,9 @@
 const express=require("express");
-const {productsRouter}=require("../routes/products.routes");
-const {connectToDb}=require("../dbConfig");
-const {userRouter}=require("../routes/users.routes");
+const {productsRouter}=require("./routes/products.routes");
+const {connectToDb}=require("./dbConfig");
+const {userRouter}=require("./routes/users.routes");
 const cors = require("cors");
-const corsOptions=require("../config/cors")
+const corsOptions=require("./config/cors")
 
 const app=express();
 app.use(cors(corsOptions));
