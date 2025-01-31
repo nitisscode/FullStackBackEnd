@@ -11,10 +11,10 @@ This backend application is built using Node.js, Express, and MongoDB to provide
         git clone https://github.com/nitisscode/FullStackBackEnd
         cd FullStackBackEnd
 
-  2. Install dependencies:
+  2. **Install dependencies**:
         npm install
     
-  3. Start the server:
+  3. **Start the server**:
         npm run server
 
 ### ⚙️ Environment Variables
