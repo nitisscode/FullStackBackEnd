@@ -8,20 +8,20 @@ This backend application is built using Node.js, Express, and MongoDB to provide
 ### 🚀 Setup Instructions
 
   1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/nitisscode/FullStackBackEnd
-    cd FullStackBackEnd
-    ```
+```bash
+        git clone https://github.com/nitisscode/FullStackBackEnd
+        cd FullStackBackEnd
+```
 
   2. **Install dependencies**:
-    ```bash
-    npm install
-    ```
+```bash
+        npm install
+```
 
   3. **Start the server**:
-    ```bash
+```bash
         npm run server
-    ```
+```
 
 ### ⚙️ Environment Variables
         MONGO_URI=<Your MongoDB connection string>
@@ -29,23 +29,24 @@ This backend application is built using Node.js, Express, and MongoDB to provide
         PORT=<Port number (default: 5000)>
 
 ### 📁 project Structure
-        src/
-        ├── config/
-        │   └── cors.js                 # Handles CORS configuration
-        ├── controllers/
-        │   ├── products.controller.js   # Handles product-related logic
-        │   └── users.controller.js      # Handles user-related logic
-        ├── middlewares/
-        │   └── auth.middleware.js       # Middleware for JWT token validation
-        ├── models/
-        │   ├── products.models.js       # MongoDB schema for products
-        │   └── users.models.js          # MongoDB schema for users
-        ├── routes/
-        │   ├── products.routes.js       # Routes for product operations
-        │   └── users.routes.js          # Routes for user operations
-        ├── dbConfig.js                  # Database connection logic
-        └── index.js                     # Application entry point
-
+```bash
+    src/
+    ├── config/
+    │   └── cors.js                 # Handles CORS configuration
+    ├── controllers/
+    │   ├── products.controller.js   # Handles product-related logic
+    │   └── users.controller.js      # Handles user-related logic
+    ├── middlewares/
+    │   └── auth.middleware.js       # Middleware for JWT token validation
+    ├── models/
+    │   ├── products.models.js       # MongoDB schema for products
+    │   └── users.models.js          # MongoDB schema for users
+    ├── routes/
+    │   ├── products.routes.js       # Routes for product operations
+    │   └── users.routes.js          # Routes for user operations
+    ├── dbConfig.js                  # Database connection logic
+    └── index.js                     # Application entry point
+```
 ### 🔧 API Documentation
 #### Authentication Endpoints
 - POST /api/users/signup: Register a new user
@@ -59,7 +60,7 @@ Request Body:
         }
     ```
 Response (Success):
-    ```bash
+    ```json
         {
             "message": "User registered successfully"
         }
@@ -79,7 +80,7 @@ Response (Success):
             "message": "Login successfully",
             "token": "your-jwt-token"
         }
-    ```bash
+    ```
 
 ##### Product Endpoints
 GET /api/products
