@@ -49,40 +49,40 @@ This backend application is built using Node.js, Express, and MongoDB to provide
 ```
 ### 🔧 API Documentation
 #### Authentication Endpoints
-- POST /api/users/signup: Register a new user
+POST /api/users/signup: Register a new user
 Request Body:
-    ```bash
-        {
-            "firstName": "John",
-            "lastName": "Deere"
-            "email": "john@deere.com",
-            "password": "password123"
-        }
-    ```
+```bash
+    {
+        "firstName": "John",
+        "lastName": "Deere"
+        "email": "john@deere.com",
+        "password": "password123"
+    }
+```
 Response (Success):
-    ```json
-        {
-            "message": "User registered successfully"
-        }
-    ```
+```bash
+    {
+        "message": "User registered successfully"
+    }
+```
 
-- POST /api/users/login: User login
+POST /api/users/login: User login
 Request Body:
-    ```bash
-        {
-            "email": "john@example.com",
-            "password": "password123"
-        }
-    ```
+```bash
+    {
+        "email": "john@example.com",
+        "password": "password123"
+    }
+```
 Response (Success):
-    ```bash
-        {
-            "message": "Login successfully",
-            "token": "your-jwt-token"
-        }
-    ```
+```bash
+    {
+        "message": "Login successfully",
+        "token": "your-jwt-token"
+    }
+```
 
-##### Product Endpoints
+#### **Product Endpoints**
 GET /api/products
 - Valid user will get the product list
     ```bash
