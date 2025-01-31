@@ -8,14 +8,20 @@ This backend application is built using Node.js, Express, and MongoDB to provide
 ### 🚀 Setup Instructions
 
   1. **Clone the repository**:
-        git clone https://github.com/nitisscode/FullStackBackEnd
-        cd FullStackBackEnd
+    ```bash
+    git clone https://github.com/nitisscode/FullStackBackEnd
+    cd FullStackBackEnd
+    ```
 
   2. **Install dependencies**:
-        npm install
-    
+    ```bash
+    npm install
+    ```
+
   3. **Start the server**:
+    ```bash
         npm run server
+    ```
 
 ### ⚙️ Environment Variables
         MONGO_URI=<Your MongoDB connection string>
@@ -44,33 +50,41 @@ This backend application is built using Node.js, Express, and MongoDB to provide
 #### Authentication Endpoints
 - POST /api/users/signup: Register a new user
 Request Body:
+    ```bash
         {
             "firstName": "John",
             "lastName": "Deere"
             "email": "john@deere.com",
             "password": "password123"
         }
+    ```
 Response (Success):
+    ```bash
         {
             "message": "User registered successfully"
         }
+    ```
 
 - POST /api/users/login: User login
 Request Body:
+    ```bash
         {
             "email": "john@example.com",
             "password": "password123"
         }
+    ```
 Response (Success):
+    ```bash
         {
             "message": "Login successfully",
             "token": "your-jwt-token"
         }
-
+    ```bash
 
 ##### Product Endpoints
 GET /api/products
 - Valid user will get the product list
+    ```bash
         {
             "message": "Products fetched successfully",
             "products": [
@@ -78,6 +92,7 @@ GET /api/products
                 { "id": "124", "name": "Product B", "price": 150 }
             ]
         }
+    ```
 
 
 POST /api/products
@@ -88,22 +103,26 @@ POST /api/products
     - If the token is missing, expired, or invalid, the server responds with an error message.
 
         POST /api/products
-        Headers: {
-            "Authorization": "Bearer <jwt-token>"
-        }
-        Body: {
-            "name": "Sample Product",
-            "description": "description",
-            "category": "choose category",
-            "stock": "500",
-            "imageurl": "url",
-            "price": 100,
-            "description": "A product description"
-        }
+        ```bash
+            Headers: {
+                "Authorization": "Bearer <jwt-token>"
+            }
+            Body: {
+                "name": "Sample Product",
+                "description": "description",
+                "category": "choose category",
+                "stock": "500",
+                "imageurl": "url",
+                "price": 100,
+                "description": "A product description"
+            }
+        ```
     Error Response (Invalid or missing token):
+    ```bash
         {
             "error": "You are not authorized to perform this task"
         }
+    ```
 
 PATCH /api/products/:id
 - Purpose: Update the details of an existing product (authenticated users only).
@@ -113,12 +132,14 @@ PATCH /api/products/:id
     - If the token is invalid or the user lacks permission, an error message is returned.
 Example:- 
 PATCH /api/products/12345
+```bash
 Headers: {
     "Authorization": "Bearer <jwt-token>"
 }
 Body: {
     "price": 150
 }
+```
 
 DELETE /api/products/:id
 - Purpose: Delete a product (for authenticated users only).
@@ -126,14 +147,19 @@ DELETE /api/products/:id
     - The JWT token ensures that only valid users can delete products.
     - If the token is missing or invalid, an error message is returned.
 
-        DELETE /api/products/12345
+    DELETE /api/products/12345
+    ```bash
         Headers: {
             "Authorization": "Bearer <jwt-token>"
         }
+    ```
     Error Response (Invalid or missing token):
+    ```bash
         {
             "error": "You are not authorized to perform this task"
         }
+    ```
+
 
 ### 🔐 **Authentication and Authorization**
 
